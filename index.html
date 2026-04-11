@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rim Slama | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+header{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 8%;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+header h1 span{
+  color:#00f2fe;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00f2fe;
+}
+
+/* SOCIAL ICONS */
+nav a i{
+  margin-left:15px;
+  font-size:18px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:120px 8%;
+}
+
+.hero-text{
+  max-width:600px;
+}
+
+.hero-text h2{
+  font-size:2.8rem;
+  margin-bottom:10px;
+}
+
+.hero-text span{
+  color:#00f2fe;
+}
+
+.subtitle{
+  opacity:0.7;
+  margin-bottom:15px;
+}
+
+.desc{
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+/* BUTTONS */
+.btn{
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  margin-right:10px;
+  font-weight:500;
+  transition:0.3s;
+  display:inline-block;
+  background:linear-gradient(45deg,#00f2fe,#f093fb);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn.outline{
+  background:transparent;
+  border:2px solid #00f2fe;
+}
+
+/* IMAGE */
+.hero-img img{
+  width:300px;
+  border-radius:50%;
+  border:5px solid #00f2fe;
+  box-shadow:0 0 40px rgba(0,242,254,0.5);
+}
+
+/* SECTIONS */
+section{
+  padding:100px 8%;
+  text-align:center;
+}
+
+h2{
+  font-size:2.2rem;
+  margin-bottom:40px;
+}
+
+/* ABOUT */
+.about-box{
+  max-width:700px;
+  margin:auto;
+  line-height:1.7;
+  opacity:0.9;
+}
+
+/* ===== SKILLS ===== */
+.skills-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin-top:40px;
+}
+
+.skill{
+  margin-bottom:25px;
+}
+
+.skill-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:0.95rem;
+  margin-bottom:8px;
+}
+
+.skill-title i{
+  margin-right:8px;
+  color:#00f2fe;
+}
+
+.bar{
+  height:10px;
+  background:rgba(255,255,255,0.1);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bar div{
+  height:100%;
+  background:linear-gradient(90deg,#00f2fe,#f093fb);
+}
+
+/* ===== TAGS ===== */
+.tags-section{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  text-align:left;
+}
+
+.tags-section h3{
+  margin-bottom:15px;
+  color:#00f2fe;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tags span{
+  padding:8px 12px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+}
+
+/* ===== PROJECTS ===== */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.project-card{
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+}
+
+/* ===== CONTACT ===== */
+.contact-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  max-width:900px;
+  margin:auto;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+}
+
+input, textarea{
+  margin-bottom:15px;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+}
+
+button{
+  background:#00f2fe;
+  border:none;
+  padding:12px;
+  border-radius:25px;
+  color:black;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;}
+  .skills-wrapper{grid-template-columns:1fr;}
+  .contact-box{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Rim<span>.</span></h1>
+
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#about">À propos</a>
+    <a href="#skills">Compétences</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+
+    <!-- SOCIAL ICONS -->
+    <a href="https://www.linkedin.com/in/reem-slama" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/reemslama" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+<div class="hero-text">
+  <h2>Bonjour, je suis <span>Rim Slama</span></h2>
+  <p class="subtitle">Full Stack Developer • Engineering Student</p>
+
+  <p class="desc">
+    Technicienne supérieure en ingénierie des systèmes informatiques, spécialisée en IoT et systèmes embarqués..
+  </p>
+
+  <a href="#projects" class="btn">Mes projets</a>
+  <a href="Rim_Slama.pdf" class="btn outline" target="_blank">Mon CV</a>
+</div>
+
+<div class="hero-img">
+  <img src="images/rim slama.png">
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>À propos</h2>
+<div class="about-box">
+Diplômée en ingénierie des systèmes informatiques, spécialité systèmes embarqués et IoT, 
+je suis actuellement étudiante ingénieure passionnée par les nouvelles technologies et le développement de solutions intelligentes.
+ Curieuse et motivée, j’ai acquis des compétences solides en développement logiciel, intégration de systèmes et i
+ ntelligence artificielle à travers divers projets académiques et personnels. Je souhaite approfondir
+ mes connaissances dans le domaine de la data science et contribuer à la conception de solutions innovantes et performantes
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Compétences</h2>
+
+<div class="skills-wrapper">
+
+  <div>
+    <div class="skill">
+      <div class="skill-title">
+        <i class="fab fa-html5"></i> HTML/CSS/JS <b>90%</b>
+      </div>
+      <div class="bar"><div style="width:90%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">
+        <i class="fab fa-angular"></i> Angular / Spring Boot <b>60%</b>
+      </div>
+      <div class="bar"><div style="width:60%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">
+        <i class="fab fa-symfony"></i> Symfony <b>50%</b>
+      </div>
+      <div class="bar"><div style="width:50%"></div></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="skill">
+      <div class="skill-title">
+        <i class="fas fa-database"></i> SQL <b>60%</b>
+      </div>
+      <div class="bar"><div style="width:60%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">
+        <i class="fab fa-java"></i> Java / JavaFX <b>50%</b>
+      </div>
+      <div class="bar"><div style="width:70%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-title">
+        <i class="fab fa-python"></i> Python <b>70%</b>
+      </div>
+      <div class="bar"><div style="width:50%"></div></div>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projets</h2>
+
+<div class="projects-grid">
+<div class="project-card"> Syst`eme de d´etection visuelle des aliments avec analyse nutritionnelle</div>
+<div class="project-card">Plateforme web de vente des exc´edents alimentaires </div>
+<div class="project-card">Plateforme de sant´e mental</div>
+<div class="project-card">Application de gestion d’emploi du temps</div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+
+<div class="contact-box">
+
+<div>
+<p><i class="fas fa-envelope"></i> reemslama21@gmail.com</p>
+<p><i class="fas fa-phone"></i> +216 58 130 618</p>
+</div>
+
+<form class="contact-form">
+  <input type="text" placeholder="Nom" required>
+  <input type="email" placeholder="Email" required>
+  <textarea placeholder="Message" required></textarea>
+  <button type="submit">Envoyer</button>
+</form>
+
+<p id="success-message" style="display:none; color:#00f2fe; margin-top:15px;">
+  ✅ Merci ! Votre message a bien été reçu.
+</p>
+
+</div>
+</section>
+
+
+<script>
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    document.getElementById('success-message').style.display = 'block';
+
+    this.reset();
+
+    setTimeout(() => {
+        document.getElementById('success-message').style.display = 'none';
+    }, 3000);
+});
+</script>
+
+</body>
+</html>
